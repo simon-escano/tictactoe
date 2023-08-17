@@ -21,7 +21,7 @@
   filter: grayscale(0.7);
   box-shadow: var(--outset-thin);
 } .mini-background-selected {
-  box-shadow: var(--inset-thin);
+  box-shadow: var(--outset-thin);
   border: 5px solid #295cd4;
   width: 110px;
   filter: grayscale(0);
@@ -65,9 +65,19 @@
 }
 
 @media (max-width: 480px) {
+  .choose-background {
+    bottom: 10px;
+    right: 10px;
+    column-gap: 5px;
+  }
   .mini-background {
-    width: 80px;
+    width: 50px;
+    border-radius: 15px;
+    border: 3px solid var(--bg-color);
   } .mini-background-selected {
-    width: 85px;
+    width: 55px;
+    border: 3px solid #295cd4;
+  } .bg-none-button {
+    height: 40px;
   }
 }
