@@ -41,6 +41,10 @@
   --inset-button: inset 5px 5px 7.5px var(--quaternary-color), inset -5px -5px 7.5px var(--tertiary-color); 
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
   font-family: prompt;
