@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/prj2-tic-tac-toe.css">
+    <link rel="stylesheet" href="styles/prj2-tic-tac-toe-rps.css">
+    <link rel="stylesheet" href="styles/prj2-tic-tac-toe-bgs.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/website-icon.svg">
+  </head>
+  <body>
+    <div class="background-container">
+    </div>
+    <div class="container">
+        <div class="rps-container"></div>
+        <div class="gamemode-area">
+          <div class="gamemode singleplayer">
+            <img class="gamemode-icon singleplayer-icon" src="images/singleplayer.svg">Singleplayer</div>
+          <div class="gamemode twoplayer">
+            <img class="gamemode-icon twoplayer-icon" src="images/twoplayer.svg">Two-Player</div>
+          <div class="symbol-buttons">
+            <button class="symbol-button cross-button"><img class="symbol cross" src="images/cross.svg"></button>
+            <button class="symbol-button circle-button"><img class="symbol circle" src="images/circle.svg"></button>
+          </div>
+        </div>
+        <div class="ttt-container">
+          <div class="ttt-cover"></div>
+          <div class="ttt-row">
+            <button class="ttt-box R0C0"></button>
+            <button class="ttt-box R0C1"></button>
+            <button class="ttt-box R0C2"></button>
+          </div>
+          <div class="ttt-row">
+            <button class="ttt-box R1C0"></button>
+            <button class="ttt-box R1C1"></button>
+            <button class="ttt-box R1C2"></button>
+          </div>
+          <div class="ttt-row">
+            <button class="ttt-box R2C0"></button>
+            <button class="ttt-box R2C1"></button>
+            <button class="ttt-box R2C2"></button>
+          </div>
+        </div>
+        <div class="score-area">
+          <div class="score-board">
+            <div class="score">
+              <p class="score-label first-label">PLAYER</p>
+              <p class="score-number wins">0</p>
+            </div>
+            <div class="score">
+              <p class="score-label second-label">COMPUTER</p>
+              <p class="score-number losses">0</p>
+            </div>
+            <div class="score">
+              <p class="score-label">DRAWS</p>
+              <p class="score-number draws">0</p>
+            </div>
+          </div>
+          <button class="reset-score">Reset score</button>
+        </div>
+    </div>
+    <div class="choose-background">
+      <img class="mini-background bgChoice1" src="images/background1.jpg">
+      <img class="mini-background bgChoice2" src="images/background2.jpg">
+      <img class="mini-background bgChoice3" src="images/background3.jpg">
+      <button class="bg-none-button bgChoice0"><img class="none-icon" src="images/none-icon.svg"></button>
+    </div>
+
+    <div class="header">
+      <div class="logo-area">
+        <img class="logo" src="images/tttLogo.svg">
+        <p class="title">TicTacToe!</p>
+      </div>
+      <div class="dark-mode-button"><div class="dark-mode-switch"></div></div>
+    </div>
+    
+    <script src="scripts/prj2-tic-tac-toe.js"></script>
+    <script src="scripts/prj2-tic-tac-toe-rps.js"></script>
+    <script src="scripts/prj2-tic-tac-toe-bgs.js"></script>
+  </body>
+</html>
