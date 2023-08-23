@@ -167,11 +167,21 @@ function rngMove() {
   }
   if (!aiMove.i && !aiMove.j) {
     if(grid[1][1].user) {
-      while ((aiMove.i !== 2 || aiMove.i !== 0) && (aiMove.j !== 2 || aiMove.j !== 0)) {
-        aiMove.i = zeroToTwo();
-        aiMove.j = zeroToTwo();
-        if ((aiMove.i === 2 || aiMove.i === 0) && (aiMove.j === 2 || aiMove.j === 0)) {
-          break;
+      if (moveAlternator === 8) {
+        while ((aiMove.i !== 2 || aiMove.i !== 0) && (aiMove.j !== 2 || aiMove.j !== 0)) {
+          aiMove.i = zeroToTwo();
+          aiMove.j = zeroToTwo();
+          if ((aiMove.i === 2 || aiMove.i === 0) && (aiMove.j === 2 || aiMove.j === 0)) {
+            return aiMove;
+          }
+        }
+      } else {
+        while (true) {
+          aiMove.i = zeroToTwo();
+          aiMove.j = zeroToTwo();
+          if (!grid[aiMove.i][aiMove.j].user) {
+            return aiMove;
+          }
         }
       }
     } else {
@@ -179,7 +189,6 @@ function rngMove() {
       return aiMove;
     }
   }
-  return aiMove;
 }
 
 function pickMove(i, j, user) {
