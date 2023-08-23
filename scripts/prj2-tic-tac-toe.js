@@ -118,10 +118,10 @@ function rngMove() {
   }
   const aiMove = {i: undefined, j: undefined};
   let kCtr = 0, lCtr = 0;
-  grid.forEach((row, i) => {
+  for (let i = 0; i < grid.length; i++) {
     let iCtr = 0, jCtr = 0;
-    row.forEach((box, j) => {
-      if (box.user === 'me') {
+    for (let j = 0; j < grid.length; j++) {
+      if (grid[i][j].user === 'me') {
         iCtr++;
         if (i === j) {
           kCtr++;
@@ -131,32 +131,40 @@ function rngMove() {
       } if (grid[j][i].user === 'me') {
         jCtr++;
       }
-    });
-    row.forEach((box, j) => {
-      if (!box.user) {
+    }
+    for (let j = 0; j < grid.length; j++) {
+      if (!grid[i][j].user) {
         if (iCtr === 2) {
+          console.log(`Possible row counter found at [${i}][${j}]`);
           aiMove.i = i, aiMove.j = j;
+          return aiMove;
         }
       }
       if (!grid[j][i].user) {
         if (jCtr === 2) {
+          console.log(`Possible col counter found at [${j}][${i}]`);
           aiMove.i = j, aiMove.j = i;
+          return aiMove;
         }
       }
-    });
-  });
-  grid.forEach((row, i) => {
-    row.forEach((box, j) => {
-      if (!box.user) {
+    }
+  }
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid.length; j++) {
+      if (!grid[i][j].user) {
         if (i === j && kCtr === 2) {
+          console.log(`Possible diag1 counter found at [${i}][${j}]`);
           aiMove.i = i, aiMove.j = j;
+          return aiMove;
         }
         if (i + j === 2 && lCtr === 2) {
+          console.log(`Possible diag2 counter found at [${i}][${j}]`);
           aiMove.i = i, aiMove.j = j;
+          return aiMove;
         }
       }
-    });
-  });
+    }
+  }
   if (!aiMove.i && !aiMove.j) {
     while (true) {
       aiMove.i = zeroToTwo();
