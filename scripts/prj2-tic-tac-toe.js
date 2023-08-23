@@ -166,12 +166,17 @@ function rngMove() {
     }
   }
   if (!aiMove.i && !aiMove.j) {
-    while (true) {
-      aiMove.i = zeroToTwo();
-      aiMove.j = zeroToTwo();
-      if (!grid[aiMove.i][aiMove.j].user) {
-        break;
+    if(grid[1][1].user) {
+      while ((aiMove.i !== 2 || aiMove.i !== 0) && (aiMove.j !== 2 || aiMove.j !== 0)) {
+        aiMove.i = zeroToTwo();
+        aiMove.j = zeroToTwo();
+        if ((aiMove.i === 2 || aiMove.i === 0) && (aiMove.j === 2 || aiMove.j === 0)) {
+          break;
+        }
       }
+    } else {
+      aiMove.i = 1, aiMove.j = 1;
+      return aiMove;
     }
   }
   return aiMove;
